@@ -21,22 +21,28 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     <meta charset="UTF-8">
     <title>Menu Vendedor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1>Lista de Repuestos</h1>
-        <form class="form-inline mb-3" method="GET" action="">
-            <div class="form-group mr-2">
-                <label for="nombre" class="sr-only">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo htmlspecialchars($nombre); ?>">
-            </div>
-            <div class="form-group mr-2">
-                <label for="proveedor" class="sr-only">Proveedor</label>
-                <input type="text" class="form-control" id="proveedor" name="proveedor" placeholder="Proveedor" value="<?php echo htmlspecialchars($proveedor); ?>">
-            </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Menu Vendedor</a>
+        <form class="form-inline my-2 my-lg-0" method="GET" action="">
+            <input class="form-control mr-sm-2" type="text" placeholder="Nombre" aria-label="Nombre" name="nombre" value="<?php echo htmlspecialchars($nombre); ?>">
+            <input class="form-control mr-sm-2" type="text" placeholder="Proveedor" aria-label="Proveedor" name="proveedor" value="<?php echo htmlspecialchars($proveedor); ?>">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
         </form>
-        <a href="agregar_repuesto.php" class="btn btn-primary mb-3">Agregar Repuesto</a>
+        <div>
+            <a href="agregar_repuesto.php" class="btn btn-primary ml-2">Agregar Repuesto</a>
+            <a href="index.php" class="btn btn-danger ml-2">Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <h1>Lista de Repuestos</h1>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -86,3 +92,5 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     </div>
 </body>
 </html>
+
+

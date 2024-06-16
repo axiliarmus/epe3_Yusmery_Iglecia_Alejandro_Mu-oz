@@ -11,7 +11,10 @@ include 'db.php';
 <body>
     <div class="container mt-5">
         <h1>Lista de Usuarios</h1>
-        <a href="agregar_usuario.php" class="btn btn-primary mb-3">Agregar Usuario</a>
+        <div class="d-flex justify-content-between mb-3">
+            <a href="agregar_usuario.php" class="btn btn-primary">Agregar Usuario</a>
+            <a href="index.php" class="btn btn-danger">Volver al Inicio</a>
+        </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -50,4 +53,3 @@ include 'db.php';
     </div>
 </body>
 </html>
-
